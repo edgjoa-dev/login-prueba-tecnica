@@ -127,7 +127,7 @@ const users = {
         education: 'Filología Inglesa'
     },
     '10': {
-        name: 'Miguel',
+        name: 'Pablo',
         lastName1: 'González',
         lastName2: 'Martín',
         email: 'miguel.gonzalez@gmail.com',
