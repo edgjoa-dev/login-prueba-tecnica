@@ -23,11 +23,15 @@ api.js: Simulación de API
 
 El usuario solo puede acceder a la pantalla del formulario si se autentica correctamente con las credenciales proporcionadas. Los intentos de login fallidos están limitados a 3, tras los cuales el formulario de login se desactiva.
 
+## Logout
+El usuario puede cerrar sesión haciendo clic en el botón "Cerrar sesión", lo que borra el estado de autenticación y lo redirige al login.
+
 ## Ruta Protegida
 Se utiliza react-router-dom para proteger la ruta /form. Si un usuario no autenticado intenta acceder directamente a /form, es redirigido al login.
 
-## Logout
-El usuario puede cerrar sesión haciendo clic en el botón "Cerrar sesión", lo que borra el estado de autenticación y lo redirige al login.
+
+## Consulta de Usuario por ID
+Una vez estando dentro de la app con las credenciales correctas user: azteca y password: 12345, el usuario puede ingresar un número de ID en el input, los cuales van del 1 al 10 para poder visualizar los campos de información de cada usuario. En caso de introducir un ID no válido, se mostrará un mensaje de error.
 
 ## Instrucciones para Ejecutar la Aplicación
 ### Clonar el repositorio:
