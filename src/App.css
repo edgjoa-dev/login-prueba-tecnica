@@ -1,33 +1,301 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  min-height: 60vh;
+  width: 30vw;
+}
+
+.header {
+  background-color: #00b894;
+  padding: 40px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header h1 {
+  text-align: center;
+  color: #ffffff;
+  margin: 10px 0 0;
+  font-size: 24px;
+}
+
+.form-group {
+  gap: 8px;
+  margin: 20px auto;
+  align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.form-group input {
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #333;
+  border-radius: 20px;
+}
+
+.form-group a {
+  font-size: 14px;
+  color: #00b894;
+  text-decoration: none;
+}
+
+.form-group a:hover {
+  text-decoration: underline;
+}
+
+.button {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #00b894;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 60px;
+  padding: 12px 24px;
+  transition: all 0.15s ease;
+  width: 30%;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+  background-color: #019a7a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* CSS para pantallas pequeñas */
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-radius: 0%;
+    box-shadow: none;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* CSS para dispositivos tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto;
+    margin: 10vh auto;
+    width: 50vw;
+  }
+}
+
+
+
+
+
+/*CSS para Form.js*/
+.container-userdata {
+  align-items: center;
+  background-color: #00b894;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(75, 67, 67, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  min-height: 80vh;
+  width: 60vw;
+}
+
+.container-userdata input {
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 32%;
+}
+
+.header-form {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 16px auto;
+  width: 50vw;
+}
+
+.header-left {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  width: 90%;
+}
+
+.header-right {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.button-search {
+  background-color: #00b894;
+  border-radius: 5px;
+  border: solid 1px #005040;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 24px;
+  transition: all 0.15s ease;
+}
+
+.button-logout {
+  align-items: center;
+  background-color: #df1c1c;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  transition: all 0.15s ease;
+}
+
+.button-logout:hover {
+  background-color: #c01b1b;
+  border: none;
+}
+
+.button-search:hover {
+  background-color: #019a7a;
+  border: none;
+}
+
+.userdata-info {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+  justify-content: center;
+  min-height: 50vh;
+  min-width: 100%;
+  padding: 32px;
+  top: 10px;
+}
+
+.userdata-info p {
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+
+/* Media query para pantallas móviles */
+@media (max-width: 601px){
+
+  html, body{
+    background-color: #00b894;
+  }
+
+
+  .container-userdata {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .header-left {
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .header-left input {
+    margin-top: 80px;
+    width: 60vw;
+  }
+
+  .button-search {
+    font-size: 14px;
+  }
+
+  .button-logout {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+
+  .userdata-left{
+    width: 80%;
+  }
+  .userdata-right{
+    width: 80%;
+  }
+
+
+}
+
+/* Media query para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  html, body{
+    background-color: #00b894;
+  }
+
+  .container-userdata {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .header-left {
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .header-left input {
+    width: 100%;
+  }
+
+  .button-search {
+    font-size: 14px;
+  }
+
+  .button-logout {
+    position: fixed;
+    right: 50px;
+    top: 10px;
+  }
+
+  .userdata-left{
+    width: 80%;
+  }
+  .userdata-right{
+    width: 80%;
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css'
 
 class Login extends Component {
     state = {
@@ -38,8 +39,11 @@ class Login extends Component {
         const { disabled, error } = this.state;
 
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className='container'>
+                <div className='header'>
+                    <h1> Azteca  </h1>
+                </div>
+                <form onSubmit={this.handleSubmit} className='form-group'>
                     <input
                         type="text"
                         name="username"
@@ -54,7 +58,9 @@ class Login extends Component {
                         onChange={this.handleChange}
                         disabled={disabled}
                     />
-                    <button type="submit" disabled={disabled}>Enviar</button>
+                    <button type="submit" disabled={disabled} className='button'>
+                        Enviar
+                    </button>
                     {error && <p>{error}</p>}
                 </form>
             </div>
