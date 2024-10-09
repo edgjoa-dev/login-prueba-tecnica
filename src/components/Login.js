@@ -18,6 +18,8 @@ class Login extends Component {
         const { username, password, attempts } = this.state;
 
         if (username === 'azteca' && password === '12345') {
+            // Llamar a la función de éxito de login
+            this.props.onLoginSuccess();
             this.props.history.push('/form');
         } else {
             this.setState({

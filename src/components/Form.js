@@ -8,18 +8,30 @@ class Form extends Component {
         error: ''
     };
 
+    componentDidMount() {
+        this.unlisten = this.props.history.listen((location, action) => {
+            if (this.props.location.pathname === "/form" && !this.props.isAuthenticated) {
+                this.props.history.replace("/");
+            }
+        });
+    }
+
+    componentWillUnmount() {
+        if (this.unlisten) {
+            this.unlisten();
+        }
+    }
+
     handleChange = (e) => {
         this.setState({ id: e.target.value, error: '' });
     };
 
     handleFetchUser = () => {
-        // Validación del ID
         if (!this.state.id) {
             this.setState({ error: 'Por favor, ingrese un ID de usuario.' });
             return;
         }
 
-        // Resetear la información anterior antes de hacer la consulta
         this.setState({ userData: null }, () => {
             fetchUserData(this.state.id)
                 .then(userData => {
@@ -63,6 +75,11 @@ class Form extends Component {
                         <p>Educación: {userData.education}</p>
                     </div>
                 )}
+
+                {/* Botón de Logout */}
+                <button onClick={this.props.onLogout}>
+                    Cerrar sesión
+                </button>
             </div>
         );
     }
