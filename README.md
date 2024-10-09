@@ -31,7 +31,7 @@ El usuario puede cerrar sesión haciendo clic en el botón "Cerrar sesión", lo 
 
 ## Instrucciones para Ejecutar la Aplicación
 ### Clonar el repositorio:
- git clone https://github.com/edgjoa-dev/login-prueba-tecnica.git
+    git clone https://github.com/edgjoa-dev/login-prueba-tecnica.git
 
 ### Dependencias
     "react": "^16.0.0",
@@ -40,10 +40,10 @@ El usuario puede cerrar sesión haciendo clic en el botón "Cerrar sesión", lo 
     "react-router-dom": "5.1.2"
 
 ### Instalar dependencias:
-npm install
+    npm install
 
 ### Ejecutar la aplicación:
-npm start
+    npm start
 
 ### La aplicación se ejecutará en http://localhost:3000.
 
