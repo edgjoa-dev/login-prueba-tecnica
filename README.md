@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Documentación de la Aplicación - Ejercicio Técnico
+Este proyecto es una respuesta a una prueba técnica solicitada para la posición de Desarrollador Frontend con React.js. La aplicación implementa una simple pantalla de login y una ruta protegida para mostrar un formulario. También incluye funcionalidades como manejo de autenticación, un límite de intentos fallidos de login, y la capacidad de cerrar sesión mediante un botón de logout.
 
-## Available Scripts
+## Estructura del Proyecto
+El proyecto contiene los siguientes archivos clave:
 
-In the project directory, you can run:
+#### /src/components/
 
-### `npm start`
+#### Login.js: Pantalla de login con límite de intentos
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Form.js: Ruta protegida con formulario de búsqueda
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#### /src/api/
+api.js: Simulación de API
 
-### `npm test`
+#### /src/
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### App.js: Controlador principal de rutas y autenticación
 
-### `npm run build`
+#### index.js: Punto de entrada de la aplicación
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Autenticación
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+El usuario solo puede acceder a la pantalla del formulario si se autentica correctamente con las credenciales proporcionadas. Los intentos de login fallidos están limitados a 3, tras los cuales el formulario de login se desactiva.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Ruta Protegida
+Se utiliza react-router-dom para proteger la ruta /form. Si un usuario no autenticado intenta acceder directamente a /form, es redirigido al login.
 
-### `npm run eject`
+## Logout
+El usuario puede cerrar sesión haciendo clic en el botón "Cerrar sesión", lo que borra el estado de autenticación y lo redirige al login.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Instrucciones para Ejecutar la Aplicación
+### Clonar el repositorio:
+ git clone https://github.com/edgjoa-dev/login-prueba-tecnica.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Dependencias
+    "react": "^16.0.0",
+    "react-dom": "16.12.0",
+    "react-scripts": "^5.0.1",
+    "react-router-dom": "5.1.2"
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Instalar dependencias:
+npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Ejecutar la aplicación:
+npm start
 
-## Learn More
+### La aplicación se ejecutará en http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Posibles Mejoras Futuras
+Implementar validación de formularios más robusta (e.g., manejo de contraseñas más seguras).
+Agregar tests unitarios con Jest para verificar la lógica del login y la protección de rutas.
+Mejorar la UI utilizando CSS o una librería como Tailwind CSS para una mejor experiencia de usuario.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Conclusión
+Este ejercicio implementa un sistema de login simple y efectivo, con protección de rutas y logout, alineado con los requisitos solicitados para la prueba técnica. La solución es extensible y puede mejorarse para incluir funcionalidades adicionales como gestión avanzada de sesiones o integración con un backend real.
